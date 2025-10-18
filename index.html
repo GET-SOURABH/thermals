@@ -94,36 +94,36 @@
     @media (min-width: 768px) { .feature-icon { width: 4rem; height: 4rem; font-size: 2rem; } }
 
     /* Shop by Category – cohesive with Hero but lighter */
-#shop-by-category {
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary) / 0.08),
-    hsl(260 55% 68% / 0.08)
-  );
-}
-#shop-by-category::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(600px 260px at 15% 0%, hsl(260 55% 68% / 0.12), transparent 60%),
-    radial-gradient(600px 260px at 85% 100%, hsl(var(--primary) / 0.12), transparent 60%);
-}
-#shop-by-category::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.04;
-  background-image: repeating-linear-gradient(
-    45deg,
-    #000 0 2px,
-    transparent 2px 22px
-  );
-}
-#shop-by-category .container { position: relative; z-index: 1; }
+    #shop-by-category {
+      position: relative;
+      background: linear-gradient(
+        135deg,
+        hsl(var(--primary) / 0.08),
+        hsl(260 55% 68% / 0.08)
+      );
+    }
+    #shop-by-category::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(600px 260px at 15% 0%, hsl(260 55% 68% / 0.12), transparent 60%),
+        radial-gradient(600px 260px at 85% 100%, hsl(var(--primary) / 0.12), transparent 60%);
+    }
+    #shop-by-category::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: repeating-linear-gradient(
+        45deg,
+        #000 0 2px,
+        transparent 2px 22px
+      );
+    }
+    #shop-by-category .container { position: relative; z-index: 1; }
 
     /* Category tiles */
     .category-block { margin: 1.5rem 0 2rem; }
@@ -219,7 +219,7 @@
     }
     .image-placeholder {
       position: relative;
-      aspect-ratio: 896 / 1152; /* Portrait placeholder matching your preferred 896x1152 */
+      aspect-ratio: 896 / 1152; /* Portrait placeholder */
       border: 2px dashed hsl(var(--border));
       border-radius: 1rem;
       background:
@@ -255,7 +255,7 @@
       font-size: 0.95rem;
     }
 
-    /* >>> Added: make Old/New images match hero image width (32rem), responsive */
+    /* Match Old/New image width to hero image (32rem), responsive */
     #comparison .card img {
       max-width: 32rem;
       width: 100%;
@@ -263,6 +263,31 @@
       display: block;
       margin: 0 auto;
     }
+
+    /* --- Mobile polish (≤ 480px) --- */
+    @media (max-width: 480px) {
+      section { padding: 1.5rem 0; }
+      .hero-content { gap: 1rem; padding: 1.5rem 0; }
+      .card { padding: 1rem; }
+
+      .hero-text h1 { font-size: clamp(1.25rem, 6vw, 1.75rem); }
+      .hero-text h1 strong { font-size: clamp(1.5rem, 10vw, 2rem) !important; line-height: 1.1; }
+
+      .hero-image .floating-badge { 
+        top: .5rem !important; right: .5rem !important; 
+        left: auto !important; bottom: auto !important; 
+      }
+      .hero-image .floating-badge:nth-of-type(2) { display: none; }
+
+      .tile img { height: 140px; }
+
+      .mega-nav a { padding: .25rem .5rem; font-size: .95rem; }
+      .email-form { gap: .5rem; }
+      .email-input, .email-form button { font-size: 1rem; }
+    }
+
+    /* Safety: never let images overflow */
+    img { max-width: 100%; height: auto; }
   </style>
 </head>
 <body>
@@ -319,7 +344,7 @@
     </div>
   </section>
 
-  <!-- Shop by Category (now with gradient background) -->
+  <!-- Shop by Category -->
   <section id="shop-by-category">
     <div class="container">
       <div class="section-header">
@@ -411,7 +436,7 @@
     </div>
   </section>
 
-  <!-- NEW: Old vs New (big image placeholders) -->
+  <!-- Old vs New -->
   <section id="comparison">
     <div class="container">
       <div class="section-header">
@@ -423,7 +448,7 @@
           <figcaption>Before: Old-School Thermal</figcaption>
         </figure>
         <figure class="card">
-          <img src="new.png" alt="Old Thermal">
+          <img src="new.png" alt="WarmthWows Thermal">
           <figcaption>After: WarmthWows Thermal</figcaption>
         </figure>
       </div>
@@ -480,9 +505,9 @@
           </div>
         </div>
         <div class="grid-3">
-          <div class="card" style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(249, 115, 22, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem;">Lite</h3><p style="font-size: 1rem; font-weight: 600; color: hsl(var(--accent)); margin-bottom: 0.5rem;">15–20°C</p><p style="color: hsl(var(--muted-foreground)); font-size: 0.9rem;">Everyday indoor comfort</p></div>
-          <div class="card" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(239, 68, 68, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem;">Core</h3><p style="font-size: 1rem; font-weight: 600; color: hsl(var(--accent)); margin-bottom: 0.5rem;">5–15°C</p><p style="color: hsl(var(--muted-foreground)); font-size: 0.9rem;">Chilly mornings, outdoor errands</p></div>
-          <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem;">Arctic</h3><p style="font-size: 1rem; font-weight: 600; color: hsl(var(--accent)); margin-bottom: 0.5rem;">−5–5°C</p><p style="color: hsl(var(--muted-foreground)); font-size: 0.9rem;">Layer up for serious cold</p></div>
+          <div class="card" style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(249, 115, 22, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size:1.1rem; font-weight: 800; margin-bottom:0.25rem;">Lite</h3><p style="font-size:1rem; font-weight:600; color:hsl(var(--accent)); margin-bottom:0.5rem;">15–20°C</p><p style="color:hsl(var(--muted-foreground)); font-size:0.9rem;">Everyday indoor comfort</p></div>
+          <div class="card" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(239, 68, 68, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size:1.1rem; font-weight: 800; margin-bottom:0.25rem;">Core</h3><p style="font-size:1rem; font-weight:600; color:hsl(var(--accent)); margin-bottom:0.5rem;">5–15°C</p><p style="color:hsl(var(--muted-foreground)); font-size:0.9rem;">Chilly mornings, outdoor errands</p></div>
+          <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size:1.1rem; font-weight: 800; margin-bottom:0.25rem;">Arctic</h3><p style="font-size:1rem; font-weight:600; color:hsl(var(--accent)); margin-bottom:0.5rem;">−5–5°C</p><p style="color:hsl(var(--muted-foreground)); font-size:0.9rem;">Layer up for serious cold</p></div>
         </div>
       </div>
     </div>
