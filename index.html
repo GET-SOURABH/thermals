@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -219,50 +220,38 @@
     }
     .image-placeholder {
       position: relative;
-      aspect-ratio: 896 / 1152; /* Portrait placeholder */
+      aspect-ratio: 896 / 1152;
       border: 2px dashed hsl(var(--border));
       border-radius: 1rem;
-      background:
-        linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--card)) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: hsl(var(--muted-foreground));
-      font-weight: 800;
-      font-size: clamp(1rem, 2vw, 1.35rem);
-      text-align: center;
-      padding: 1rem;
-      overflow: hidden;
+      background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--card)) 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: hsl(var(--muted-foreground)); font-weight: 800;
+      font-size: clamp(1rem, 2vw, 1.35rem); text-align: center; padding: 1rem; overflow: hidden;
     }
     .image-placeholder::after {
       content: "Drop your image here or replace this block with an <img> tag";
-      position: absolute;
-      bottom: 0.75rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-weight: 600;
-      font-size: 0.75rem;
-      opacity: 0.65;
-      white-space: nowrap;
-      pointer-events: none;
+      position: absolute; bottom: 0.75rem; left: 50%; transform: translateX(-50%);
+      font-weight: 600; font-size: 0.75rem; opacity: 0.65; white-space: nowrap; pointer-events: none;
     }
     #comparison figure { margin: 0; }
     #comparison figcaption {
-      text-align: center;
-      margin-top: 0.75rem;
-      color: hsl(var(--muted-foreground));
-      font-weight: 600;
-      font-size: 0.95rem;
+      text-align: center; margin-top: 0.75rem; color: hsl(var(--muted-foreground));
+      font-weight: 600; font-size: 0.95rem;
     }
 
-    /* Match Old/New image width to hero image (32rem), responsive */
+    /* Match Old/New images to hero image dimensions/feel */
     #comparison .card img {
-      max-width: 32rem;
+      max-width: 32rem;   /* matches .hero-image max width */
       width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
     }
+
+    /* Safety: never let images overflow */
+    img { max-width: 100%; height: auto; }
 
     /* --- Mobile polish (≤ 480px) --- */
     @media (max-width: 480px) {
@@ -285,9 +274,6 @@
       .email-form { gap: .5rem; }
       .email-input, .email-form button { font-size: 1rem; }
     }
-
-    /* Safety: never let images overflow */
-    img { max-width: 100%; height: auto; }
   </style>
 </head>
 <body>
@@ -505,9 +491,9 @@
           </div>
         </div>
         <div class="grid-3">
-          <div class="card" style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(249, 115, 22, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size:1.1rem; font-weight: 800; margin-bottom:0.25rem;">Lite</h3><p style="font-size:1rem; font-weight:600; color:hsl(var(--accent)); margin-bottom:0.5rem;">15–20°C</p><p style="color:hsl(var(--muted-foreground)); font-size:0.9rem;">Everyday indoor comfort</p></div>
-          <div class="card" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(239, 68, 68, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size:1.1rem; font-weight: 800; margin-bottom:0.25rem;">Core</h3><p style="font-size:1rem; font-weight:600; color:hsl(var(--accent)); margin-bottom:0.5rem;">5–15°C</p><p style="color:hsl(var(--muted-foreground)); font-size:0.9rem;">Chilly mornings, outdoor errands</p></div>
-          <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size:1.1rem; font-weight: 800; margin-bottom:0.25rem;">Arctic</h3><p style="font-size:1rem; font-weight:600; color:hsl(var(--accent)); margin-bottom:0.5rem;">−5–5°C</p><p style="color:hsl(var(--muted-foreground)); font-size:0.9rem;">Layer up for serious cold</p></div>
+          <div class="card" style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(249, 115, 22, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem;">Lite</h3><p style="font-size: 1rem; font-weight: 600; color: hsl(var(--accent)); margin-bottom: 0.5rem;">15–20°C</p><p style="color: hsl(var(--muted-foreground)); font-size: 0.9rem;">Everyday indoor comfort</p></div>
+          <div class="card" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(239, 68, 68, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem;">Core</h3><p style="font-size: 1rem; font-weight: 600; color: hsl(var(--accent)); margin-bottom: 0.5rem;">5–15°C</p><p style="color: hsl(var(--muted-foreground)); font-size: 0.9rem;">Chilly mornings, outdoor errands</p></div>
+          <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));"><div class="feature-icon">🌡️</div><h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem;">Arctic</h3><p style="font-size: 1rem; font-weight: 600; color: hsl(var(--accent)); margin-bottom: 0.5rem;">−5–5°C</p><p style="color: hsl(var(--muted-foreground)); font-size: 0.9rem;">Layer up for serious cold</p></div>
         </div>
       </div>
     </div>
@@ -634,3 +620,4 @@
   </script>
 </body>
 </html>
+```
